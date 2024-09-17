@@ -13,11 +13,20 @@ class FormDataState extends State<FormData> {
   final _namaController = TextEditingController();
   final _nimController = TextEditingController();
   final _tahunController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Input Data"),
+        backgroundColor:
+            Colors.blueGrey, // Sets the background color of the AppBar
+        titleTextStyle: const TextStyle(
+          fontFamily: 'Open Sans',
+          color: Colors.white,
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ), // Sets the font style of the AppBar title
       ),
       body: Container(
         margin: const EdgeInsets.all(10),
@@ -64,6 +73,16 @@ class FormDataState extends State<FormData> {
               builder: (context) =>
                   TampilData(nama: nama, nim: nim, tahun: tahun)));
         },
+        style: ElevatedButton.styleFrom(
+          backgroundColor:
+              Colors.blueGrey, // Sets the background color of the button
+          textStyle: const TextStyle(
+            fontFamily:
+                'Open Sans', // Replace this with your desired font family
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ), // Sets the font style
+        ),
         child: const Text('Simpan'));
   }
 }
